@@ -9,7 +9,16 @@
       Title="BurgerMenuPage">
 
     <Grid Background="White">
-        <StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="Меню">
+                <MenuItem Header="Выйти в главное меню" Click="ExitToMainMenu_MenuItemClick"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <StackPanel Grid.Row="1">
             <Label Content="Информация о бургерах :"></Label>
             <ScrollViewer Margin="3">
                 <ListView x:Name="BurgersMenuListView">

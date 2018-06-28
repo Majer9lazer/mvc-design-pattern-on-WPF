@@ -75,7 +75,11 @@ namespace MVC_design_pattern.Views
                         LoginController.GetCurrentUser());
                 if (message == "0") { 
                     MessageBox.Show("Ура ваш бургер был собран!");
-                    MainWindow.MainFrameStatic.Source= new Uri("Views/OrderPage", UriKind.RelativeOrAbsolute);
+                    MainWindow.MainFrameStatic.Source= new Uri("Views/OrderPage.xaml", UriKind.RelativeOrAbsolute);
+                    CountOfSausagesLabel.Content = "Количество сосисек : 0";
+                    CountOfHamsLabel.Content = "Количество ветчины : 0";
+                    CountOfBeefsLabel.Content = "Количество говядины : 0";
+                    CountOfCheeseSlicesLabel.Content = "Кусочков сыра : 0";
                 }
                 else
                     MessageBox.Show(message);
