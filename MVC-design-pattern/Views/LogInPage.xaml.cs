@@ -13,18 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MVC_design_pattern
+namespace MVC_design_pattern.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для LogInPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LogInPage : Page
     {
-        public MainWindow()
+        public LogInPage()
         {
             InitializeComponent();
-            DateTimeRunForFooter.Text = DateTime.Now.Year.ToString();
-            MainFrame.Source= new Uri("Views/LogInPage.xaml", UriKind.RelativeOrAbsolute);
         }
     }
 }

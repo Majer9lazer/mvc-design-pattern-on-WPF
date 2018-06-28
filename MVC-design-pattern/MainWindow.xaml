@@ -10,22 +10,18 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
-    <controls:BootstrapPanel  Type="Primary" Header="Beauty Panel" Margin="2">
-
-        <Grid Margin="5">
+    <controls:BootstrapPanel  Type="Primary" Header="Beauty Panel" Margin="3">
+        <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Button Style="{DynamicResource SuccessButton}" Content="Привет из bootstrap" HorizontalAlignment="Left" Grid.Row="0" Margin="0 3"></Button>
-            <controls:Alert Type="Info"  Grid.Row="1" >
-                <TextBlock>
-                    <Run Text="Well done!" FontWeight="Bold"/>
-                    <Run Text="You successfully read this important alert message."/>
-                </TextBlock>
-            </controls:Alert>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
 
+            </Grid.RowDefinitions>
+            
+            <Frame Grid.Row="0" 
+                
+                   x:Name="MainFrame"></Frame>
+           
         </Grid>
         <controls:BootstrapPanel.Footer>
             <Grid>
