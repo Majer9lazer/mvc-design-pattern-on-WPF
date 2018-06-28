@@ -12,26 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MVC.DAL.Model;
-using MVC_design_pattern.Controllers;
 
 namespace MVC_design_pattern.Views
 {
     /// <summary>
-    /// Логика взаимодействия для LogInPage.xaml
+    /// Логика взаимодействия для OrderPage.xaml
     /// </summary>
-    public partial class LogInPage : Page
+    public partial class OrderPage : Page
     {
-        private LoginController _loginController = new LoginController();
-        public LogInPage()
+        public OrderPage()
         {
             InitializeComponent();
-        }
-
-        private void LoginButtonClick(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show(_loginController.Login(UserNameTextBox.Text));
-            UserNameTextBox.Text = "";
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,29 +10,42 @@ namespace MVC_design_pattern.Controllers
 {
     class LoginController
     {
-        private static BurgerCafeDb _db = new BurgerCafeDb();
+        private static readonly BurgerCafeDb Db = new BurgerCafeDb();
 
         public LoginController()
         {
-            
+
         }
         public string Login(string userName)
         {
-            try
+            if (!string.IsNullOrEmpty(userName))
             {
-                _db.Users.Add(new User()
+                try
                 {
-                    UserName = userName,
-                    UserDateSignIn = DateTime.Now,
-                    UserWindowsAccountName = Environment.UserName
-                });
-                _db.SaveChanges();
-                return $"Уважаемый (-ая) {userName} добро пожаловать!";
+                    User findedUser = Db.Users.FirstOrDefault(f => f.UserName == userName);
+                    if (findedUser == null)
+                    {
+                        Db.Users.Add(new User()
+                        {
+                            UserName = userName,
+                            UserDateSignIn = DateTime.Now,
+                            UserWindowsAccountName = Environment.UserName
+                        });
+                        Db.SaveChanges();
+                        return $"Уважаемый (-ая) {userName} добро пожаловать!";
+                    }
+                    findedUser.UserDateSignIn = DateTime.Now;
+                    findedUser.UserWindowsAccountName = Environment.UserName;
+                    Db.Entry(findedUser).State = EntityState.Modified;
+                    Db.SaveChanges();
+                    return $"Добро пожаловать {userName}.";
+                }
+                catch (Exception e)
+                {
+                    return e.ToString();
+                }
             }
-            catch (Exception e)
-            {
-                return e.ToString();
-            }
+            return "Вы не заполнили поле.";
         }
     }
 }

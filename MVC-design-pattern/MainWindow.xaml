@@ -10,18 +10,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
-    <controls:BootstrapPanel  Type="Primary" Header="Beauty Panel" Margin="3">
+    <controls:BootstrapPanel  Type="Primary" Header="Best Burgers by George" Margin="3">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
-
             </Grid.RowDefinitions>
-            
-            <Frame Grid.Row="0" 
-                
-                   x:Name="MainFrame"></Frame>
-           
+            <Frame Grid.Row="0" x:Name="MainFrame"></Frame>
         </Grid>
         <controls:BootstrapPanel.Footer>
             <Grid>
@@ -37,9 +32,7 @@
                            x:Name="FooterTextBlock" 
                            FontSize="16" 
                            FontFamily="Times New Roman">
-                  
-                    <Run x:Name="DateTimeRunForFooter" FontWeight="Bold" Text="2019">
-                    </Run>
+                    <Run x:Name="DateTimeRunForFooter" FontWeight="Bold" Text="2019"></Run>
                     <Run>  
                         <Run.Text>
                             all copyrights reserved
@@ -47,8 +40,6 @@
                     </Run>
                 </TextBlock>
             </Grid>
-
-
         </controls:BootstrapPanel.Footer>
     </controls:BootstrapPanel>
 </Window>

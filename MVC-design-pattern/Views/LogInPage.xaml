@@ -44,7 +44,8 @@
                             HorizontalAlignment="Left" FontSize="16"
                             MinWidth="{Binding ElementName=AskUserNameBorder,Path=ActualWidth}" 
                             Margin="1"
-                        Click="LoginButtonClick"></Button>
+                        Click="LoginButtonClick" 
+                        IsDefault="True"></Button>
             </Grid>
         </controls:BootstrapPanel>
     </Grid>
