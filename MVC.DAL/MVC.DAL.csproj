@@ -50,6 +50,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factory\Beef.cs" />
+    <Compile Include="Factory\LocalBurger.cs" />
+    <Compile Include="Factory\Ham.cs" />
+    <Compile Include="Factory\IProduct.cs" />
+    <Compile Include="Factory\Prototype\CheeseSlice.cs" />
+    <Compile Include="Factory\Prototype\Clonable.cs" />
+    <Compile Include="Factory\Sausage.cs" />
+    <Compile Include="Factory\Singleton\MoneyCounter.cs" />
     <Compile Include="Model\Burger.cs" />
     <Compile Include="Model\BurgerCafeDb.cs" />
     <Compile Include="Model\Order.cs" />

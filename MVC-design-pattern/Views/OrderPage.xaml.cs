@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -34,6 +35,23 @@ namespace MVC_design_pattern.Views
         private void GotFocusMainMenu(object sender, RoutedEventArgs e)
         {
             OrderBurgerBackgroundImage.Opacity = 0.5;
+        }
+
+        private void CreateBurgerMenuItemClick(object sender, RoutedEventArgs e)
+        {
+            MainWindow.MainFrameStatic.Source = new Uri("Views/CreateBurgerPage.xaml", UriKind.RelativeOrAbsolute);
+        }
+
+        private void ExitToMainPage_MenuItemClick(object sender, RoutedEventArgs e)
+        {
+            MainWindow.MainFrameStatic.Source = new Uri("Views/LogInPage.xaml", UriKind.RelativeOrAbsolute);
+        }
+
+        private void ApllicationExit_MenuItemClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("До скорых встреч!");
+            Thread.Sleep(1000);
+            Application.Current.Shutdown();
         }
     }
 }

@@ -9,16 +9,25 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="OrderPage">
     <Border  Background="Black" BorderBrush="Gray" BorderThickness="2" CornerRadius="7">
-        <Grid>
-            <Menu>
-                <Menu.Background>
-                    <ImageBrush ImageSource="../Images/Big-Juicy-Burgers.jpg" Stretch="UniformToFill" x:Name="OrderBurgerBackgroundImage"  ></ImageBrush>
-                </Menu.Background>
-                <MenuItem Header="Меню" Foreground="White" FontSize="19" GotFocus="GotFocusMainMenu">
-                    <MenuItem Foreground="Black" Header="Показать меню" Click="ShowMenuClick" Background="White"></MenuItem>
-                    <MenuItem Foreground="Black" Header="Заказать бургер"></MenuItem>
+        <StackPanel>
+            <StackPanel.Background>
+                <ImageBrush ImageSource="../Images/Big-Juicy-Burgers.jpg" Stretch="UniformToFill" x:Name="OrderBurgerBackgroundImage" Opacity="0.3" ></ImageBrush>
+            </StackPanel.Background>
+            <Menu HorizontalAlignment="Left">
+                <MenuItem Header="Меню" Foreground="Black" FontSize="19" GotFocus="GotFocusMainMenu">
+                    <MenuItem Foreground="Black" Header="Показать меню" Click="ShowMenuClick"></MenuItem>
+                    <MenuItem Foreground="Black" Header="Заказать бургер" Click="CreateBurgerMenuItemClick"></MenuItem>
+                    <MenuItem Foreground="Black" Header="Выход в главное меню" Click="ExitToMainPage_MenuItemClick"></MenuItem>
+                    <MenuItem Foreground="Black" Header="Выход из приложения" Click="ApllicationExit_MenuItemClick"></MenuItem>
                 </MenuItem>
             </Menu>
-        </Grid>
+           <Grid Margin="0 10">
+               <Grid.RowDefinitions>
+                   <RowDefinition></RowDefinition>
+                   <RowDefinition></RowDefinition>
+                  </Grid.RowDefinitions>
+               <TextBlock Grid.Row="0" Background="White"  Text="Список доступных бургеров :"></TextBlock>
+           </Grid>
+        </StackPanel>
     </Border>
 </Page>

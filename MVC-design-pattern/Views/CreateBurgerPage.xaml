@@ -1,0 +1,139 @@
+﻿<Page x:Class="MVC_design_pattern.Views.CreateBurgerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MVC_design_pattern.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CreateBurgerPage">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="DodgerBlue" BorderBrush="CornflowerBlue" BorderThickness="2" CornerRadius="7">
+            <Label  Content="Название вашего бургера" Foreground="White" FontSize="16" Margin="1"></Label>
+        </Border>
+        <TextBox Grid.Row="1" Margin="0 1" x:Name="BurgerNameTextBox" Text="Usual Burger"></TextBox>
+        <StackPanel Grid.Row="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Margin="1 1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Border x:Name="AddSausageBorder" Grid.Row="0" Grid.Column="0" Background="#5CD8E7" 
+                            BorderThickness="1"
+                            BorderBrush="LightBlue"
+                            CornerRadius="4" Margin="1 0">
+                        <Label FontSize="16">Добавить сосиску</Label>
+                    </Border>
+                    <Button Grid.Row="0" Grid.Column="1" FontSize="16" FontWeight="Bold" Style="{DynamicResource PrimaryButton}"
+                            HorizontalAlignment="Right"
+                            Click="AddSausageButtonClick"
+                            >+</Button>
+                    <Border Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" Background="LightGray" Margin="0 1"
+                            CornerRadius="10"
+                            Padding="3">
+                        <Label VerticalAlignment="Bottom" HorizontalAlignment="Left" x:Name="CountOfSausagesLabel">Количество сосисек : 0</Label>
+                    </Border>
+                </Grid>
+                <Grid  Grid.Row="1" Margin="1 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Border x:Name="AddSBeefBorder" Grid.Row="0" Grid.Column="0" Background="#5CD8E7" 
+                            BorderThickness="1"
+                            BorderBrush="LightBlue"
+                            CornerRadius="4" Margin="1 0"
+                            >
+                        <Label FontSize="16">Добавить говядины</Label>
+                    </Border>
+                    <Button Grid.Row="0" Grid.Column="1" FontSize="16" FontWeight="Bold" 
+                            HorizontalAlignment="Right"
+                            Style="{DynamicResource PrimaryButton}"
+                            Click="AddBeefButtonClick"
+                            >+</Button>
+                    <Border Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" Background="LightGray"
+                          
+                            Margin="0 1"
+                            CornerRadius="10"
+                            Padding="3">
+                        <Label VerticalAlignment="Bottom" HorizontalAlignment="Left" x:Name="CountOfBeefsLabel">Количество говядины : 0</Label>
+                    </Border>
+                </Grid>
+                <Grid  Grid.Row="2" Margin="1 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Border x:Name="AddHamBorder" Grid.Row="0" Grid.Column="0" Background="#5CD8E7" 
+                            BorderThickness="1"
+                            BorderBrush="LightBlue"
+                            CornerRadius="4" Margin="1 0">
+                        <Label FontSize="16">Добавить ветчины</Label>
+                    </Border>
+                    <Button Grid.Row="0" Grid.Column="1" FontSize="16" FontWeight="Bold" Style="{DynamicResource PrimaryButton}"
+                            HorizontalAlignment="Right"
+                            Click="AddHamButtonClick"
+                            >+</Button>
+                    <Border Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" Background="LightGray" Margin="0 1"
+                            CornerRadius="10"
+                            Padding="3">
+                        <Label VerticalAlignment="Bottom" HorizontalAlignment="Left" x:Name="CountOfHamsLabel">Количество ветчины : 0</Label>
+                    </Border>
+                </Grid>
+                <Grid  Grid.Row="3" Margin="1 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Border x:Name="AddCheeseSliceBorder" Grid.Row="0" Grid.Column="0" Background="#5CD8E7" 
+                            BorderThickness="1"
+                            BorderBrush="LightBlue"
+                            CornerRadius="4" Margin="1 0">
+                        <Label FontSize="16">Добавить кусочек сыра</Label>
+                    </Border>
+                    <Button Grid.Row="0" Grid.Column="1" FontSize="16" FontWeight="Bold" Style="{DynamicResource PrimaryButton}"
+                            HorizontalAlignment="Right"
+                            Click="AddCheeseSliceClick"
+                            >+</Button>
+                    <Border Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" Background="LightGray" Margin="0 1"
+                            CornerRadius="10"
+                            Padding="3">
+                        <Label VerticalAlignment="Bottom" HorizontalAlignment="Left" x:Name="CountOfCheeseSlicesLabel">Кусочков сыра: 0</Label>
+                    </Border>
+                </Grid>
+                <Button Grid.Row="4" HorizontalAlignment="Left" Margin="1 0" Content="Сформировать заказ" Click="FormOrderButtonClick" Style="{DynamicResource SuccessButton}"></Button>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>

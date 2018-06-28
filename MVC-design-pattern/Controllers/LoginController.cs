@@ -12,6 +12,7 @@ namespace MVC_design_pattern.Controllers
     {
         private static readonly BurgerCafeDb Db = new BurgerCafeDb();
         private static List<User> _users = Db.Users.ToList();
+        private static User _user= new User();
 
         public LoginController()
         {
@@ -23,21 +24,22 @@ namespace MVC_design_pattern.Controllers
             {
                 try
                 {
-                    User findedUser = _users.FirstOrDefault(f => f.UserName == userName);
-                    if (findedUser == null)
+                    _user = _users.FirstOrDefault(f => f.UserName == userName);
+                    if (_user == null)
                     {
-                        Db.Users.Add(new User()
+                        _user= new User
                         {
                             UserName = userName,
                             UserDateSignIn = DateTime.Now,
                             UserWindowsAccountName = Environment.UserName
-                        });
+                        };
+                        Db.Users.Add(_user);
                         Db.SaveChanges();
                         return 0.ToString();
                     }
-                    findedUser.UserDateSignIn = DateTime.Now;
-                    findedUser.UserWindowsAccountName = Environment.UserName;
-                    Db.Entry(findedUser).State = EntityState.Modified;
+                    _user.UserDateSignIn = DateTime.Now;
+                    _user.UserWindowsAccountName = Environment.UserName;
+                    Db.Entry(_user).State = EntityState.Modified;
                     Db.SaveChanges();
                     return 0.ToString();
                 }
@@ -48,5 +50,7 @@ namespace MVC_design_pattern.Controllers
             }
             return "Вы не заполнили поле.";
         }
+
+        public static User GetCurrentUser() => _user;
     }
 }

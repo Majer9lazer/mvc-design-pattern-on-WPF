@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MVC_design_pattern.Controllers;
 
 namespace MVC_design_pattern.Views
 {
@@ -20,9 +21,13 @@ namespace MVC_design_pattern.Views
     /// </summary>
     public partial class BurgerMenuPage : Page
     {
+        private readonly BurgerMenuController _burgerMenuController = new BurgerMenuController();
         public BurgerMenuPage()
         {
             InitializeComponent();
+            BurgersMenuListView.ItemsSource = _burgerMenuController.GetBurgers();
         }
+
+       
     }
 }

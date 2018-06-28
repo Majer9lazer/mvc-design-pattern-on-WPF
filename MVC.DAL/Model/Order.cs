@@ -12,9 +12,9 @@ namespace MVC.DAL.Model
 
         [StringLength(50)]
         public string OrderName { get; set; }
-
+        [ForeignKey("User")]
         public int? UserId { get; set; }
-
+        [ForeignKey("Burger")]
         public int? BurgerId { get; set; }
 
         public virtual Burger Burger { get; set; }
