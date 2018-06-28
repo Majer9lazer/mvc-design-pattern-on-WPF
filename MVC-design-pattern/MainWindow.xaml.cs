@@ -20,11 +20,13 @@ namespace MVC_design_pattern
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static Frame MainFrameStatic;
         public MainWindow()
         {
             InitializeComponent();
             DateTimeRunForFooter.Text = DateTime.Now.Year.ToString();
-            MainFrame.Source= new Uri("Views/LogInPage.xaml", UriKind.RelativeOrAbsolute);
+            MainFrameStatic = MainFrame;
+            MainFrameStatic.Source= new Uri("Views/LogInPage.xaml", UriKind.RelativeOrAbsolute);
         }
     }
 }

@@ -22,7 +22,7 @@ namespace MVC_design_pattern.Views
     /// </summary>
     public partial class LogInPage : Page
     {
-        private LoginController _loginController = new LoginController();
+        private readonly LoginController _loginController = new LoginController();
         public LogInPage()
         {
             InitializeComponent();
@@ -30,7 +30,14 @@ namespace MVC_design_pattern.Views
 
         private void LoginButtonClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(_loginController.Login(UserNameTextBox.Text));
+            string message = _loginController.Login(UserNameTextBox.Text);
+            if (message == "0")
+            {
+                MessageBox.Show($"Добро пожаловать {UserNameTextBox.Text}");
+                MainWindow.MainFrameStatic.Source = new Uri("Views/OrderPage.xaml", UriKind.RelativeOrAbsolute);
+            }
+            else
+                MessageBox.Show(message);
             UserNameTextBox.Text = "";
         }
     }

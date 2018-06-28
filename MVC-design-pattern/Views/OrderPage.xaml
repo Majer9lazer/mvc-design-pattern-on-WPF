@@ -8,15 +8,17 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="OrderPage">
-
-    <Grid>
-        <controls:BootstrapPanel Type="Primary" Header="Заказ бургера" >
-           <Menu>
-                    <MenuItem Header="Меню">
-                        <MenuItem Header="Показать меню"></MenuItem>
-                        <MenuItem Header="Заказать бургер"></MenuItem>
-                    </MenuItem>
-                </Menu>
-                </controls:BootstrapPanel>
-    </Grid>
+    <Border  Background="Black" BorderBrush="Gray" BorderThickness="2" CornerRadius="7">
+        <Grid>
+            <Menu>
+                <Menu.Background>
+                    <ImageBrush ImageSource="../Images/Big-Juicy-Burgers.jpg" Stretch="UniformToFill" x:Name="OrderBurgerBackgroundImage"  ></ImageBrush>
+                </Menu.Background>
+                <MenuItem Header="Меню" Foreground="White" FontSize="19" GotFocus="GotFocusMainMenu">
+                    <MenuItem Foreground="Black" Header="Показать меню" Click="ShowMenuClick" Background="White"></MenuItem>
+                    <MenuItem Foreground="Black" Header="Заказать бургер"></MenuItem>
+                </MenuItem>
+            </Menu>
+        </Grid>
+    </Border>
 </Page>

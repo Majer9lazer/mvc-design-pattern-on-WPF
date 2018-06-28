@@ -16,24 +16,13 @@ using System.Windows.Shapes;
 namespace MVC_design_pattern.Views
 {
     /// <summary>
-    /// Логика взаимодействия для OrderPage.xaml
+    /// Interaction logic for BurgerMenuPage.xaml
     /// </summary>
-    public partial class OrderPage : Page
+    public partial class BurgerMenuPage : Page
     {
-        public OrderPage()
+        public BurgerMenuPage()
         {
             InitializeComponent();
-        }
-
-        private void ShowMenuClick(object sender, RoutedEventArgs e)
-        {
-            MainWindow.MainFrameStatic.Source = new Uri("Views/BurgerMenuPage.xaml", UriKind.RelativeOrAbsolute);
-        }
-
-
-        private void GotFocusMainMenu(object sender, RoutedEventArgs e)
-        {
-            OrderBurgerBackgroundImage.Opacity = 0.5;
         }
     }
 }

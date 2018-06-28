@@ -11,6 +11,7 @@ namespace MVC_design_pattern.Controllers
     class LoginController
     {
         private static readonly BurgerCafeDb Db = new BurgerCafeDb();
+        private static List<User> _users = Db.Users.ToList();
 
         public LoginController()
         {
@@ -22,7 +23,7 @@ namespace MVC_design_pattern.Controllers
             {
                 try
                 {
-                    User findedUser = Db.Users.FirstOrDefault(f => f.UserName == userName);
+                    User findedUser = _users.FirstOrDefault(f => f.UserName == userName);
                     if (findedUser == null)
                     {
                         Db.Users.Add(new User()
@@ -32,13 +33,13 @@ namespace MVC_design_pattern.Controllers
                             UserWindowsAccountName = Environment.UserName
                         });
                         Db.SaveChanges();
-                        return $"Уважаемый (-ая) {userName} добро пожаловать!";
+                        return 0.ToString();
                     }
                     findedUser.UserDateSignIn = DateTime.Now;
                     findedUser.UserWindowsAccountName = Environment.UserName;
                     Db.Entry(findedUser).State = EntityState.Modified;
                     Db.SaveChanges();
-                    return $"Добро пожаловать {userName}.";
+                    return 0.ToString();
                 }
                 catch (Exception e)
                 {
