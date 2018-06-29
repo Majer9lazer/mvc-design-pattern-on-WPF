@@ -35,7 +35,7 @@ namespace MVC_design_pattern.Views
             CountOfSausagesLabel.Dispatcher.InvokeAsync(() =>
                 {
                     CountOfSausagesLabel.Content =
-                        $"Количество сосисек : {_buildBurgerController.AddSausage(new Sausage(_rnd.NextDouble() * 5, _rnd.Next(7, 10), "Сосиска"))}";
+                        $"Количество сосисек : {_buildBurgerController.AddSausage(new Sausage(_rnd.NextDouble() * 30, _rnd.Next(10, 20), "Сосиска"))}";
                 });
         }
         private void AddHamButtonClick(object sender, RoutedEventArgs e)
@@ -43,7 +43,7 @@ namespace MVC_design_pattern.Views
             CountOfHamsLabel.Dispatcher.InvokeAsync(() =>
             {
                 CountOfHamsLabel.Content =
-                    $"Количество ветчины : {_buildBurgerController.AddHam(new Ham(_rnd.NextDouble() * 5, _rnd.Next(7, 10), "Кусок ветчины"))}";
+                    $"Количество ветчины : {_buildBurgerController.AddHam(new Ham(_rnd.NextDouble() * 30, _rnd.Next(10, 20), "Кусок ветчины"))}";
             });
         }
         private void AddBeefButtonClick(object sender, RoutedEventArgs e)
@@ -51,7 +51,7 @@ namespace MVC_design_pattern.Views
             CountOfBeefsLabel.Dispatcher.InvokeAsync(() =>
             {
                 CountOfBeefsLabel.Content =
-                    $"Количество говядины : {_buildBurgerController.AddBeef(new Beef(_rnd.NextDouble() * 5, _rnd.Next(7, 10), "Кусок говядины"))}";
+                    $"Количество говядины : {_buildBurgerController.AddBeef(new Beef(_rnd.NextDouble() * 30, _rnd.Next(10, 20), "Кусок говядины"))}";
             });
         }
         private void AddCheeseSliceClick(object sender, RoutedEventArgs e)

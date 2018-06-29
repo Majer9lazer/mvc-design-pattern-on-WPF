@@ -27,7 +27,7 @@
                             <GridView.Columns>
                                 <GridViewColumn Header="Название бургера" DisplayMemberBinding="{Binding Path=BurgerName}"></GridViewColumn>
                                 <GridViewColumn Header="Дата изготовления бургера" DisplayMemberBinding="{Binding Path=BurgerBuildDate}" ></GridViewColumn>
-                                <GridViewColumn Header="Игредиенты" DisplayMemberBinding="{Binding Path=BurgerComonents}"></GridViewColumn>
+                                <!--<GridViewColumn Header="Игредиенты" DisplayMemberBinding="{Binding Path=BurgerComonents}"></GridViewColumn>-->
                             </GridView.Columns>
                         </GridView>
                     </ListView.View>

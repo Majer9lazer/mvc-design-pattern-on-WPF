@@ -10,8 +10,8 @@ namespace MVC_design_pattern.Controllers
 {
     public class BurgerComponentsController
     {
-        private  List<IProduct> _products= new List<IProduct>();
-        public  void SetProducts(List<IProduct> products) => _products = products;
+        //private  List<IProduct> _products= new List<IProduct>();
+        //public  void SetProducts(List<IProduct> products) => _products = products;
         private  Burger _burger;
         public  void SetBurger(Burger burger)
         {

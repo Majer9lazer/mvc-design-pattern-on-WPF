@@ -9,7 +9,7 @@ namespace MVC.DAL.Factory
     public class LocalBurger
     {
         private static readonly Random Rnd = new Random();
-        private readonly CheeseSlice _cheeseSlice = new CheeseSlice(weight: Rnd.NextDouble() * Rnd.Next(5, 10), name: "Кусочек сыра", priceForHundredGrams: 4);
+        private readonly CheeseSlice _cheeseSlice = new CheeseSlice(weight: Rnd.NextDouble() * Rnd.Next(10, 20), name: "Кусочек сыра", priceForHundredGrams: 15);
         private readonly List<ProductClass> _products = new List<ProductClass>();
         private readonly List<CheeseSlice> _cheeseSlices= new List<CheeseSlice>(); 
         public void AddProduct(ProductClass product)
