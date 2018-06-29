@@ -10,7 +10,7 @@ namespace MVC.DAL.Model
     {
         public int OrderId { get; set; }
 
-        [StringLength(50)]
+        [StringLength(250)]
         public string OrderName { get; set; }
         [ForeignKey("User")]
         public int? UserId { get; set; }

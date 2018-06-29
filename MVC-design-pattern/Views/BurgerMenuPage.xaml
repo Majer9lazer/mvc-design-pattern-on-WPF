@@ -21,7 +21,7 @@
         <StackPanel Grid.Row="1">
             <Label Content="Информация о бургерах :"></Label>
             <ScrollViewer Margin="3">
-                <ListView x:Name="BurgersMenuListView">
+                <ListView x:Name="BurgersMenuListView" SelectionChanged="BurgersMenuListView_OnSelected">
                     <ListView.View>
                         <GridView>
                             <GridView.Columns>

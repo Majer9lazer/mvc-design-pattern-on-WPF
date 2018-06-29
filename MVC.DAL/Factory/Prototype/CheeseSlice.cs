@@ -1,6 +1,6 @@
 ﻿namespace MVC.DAL.Factory.Prototype
 {
-    public class CheeseSlice : Clonable, IProduct
+    public class CheeseSlice : Clonable
     {
         public CheeseSlice(string name, double weight, double priceForHundredGrams)
         {

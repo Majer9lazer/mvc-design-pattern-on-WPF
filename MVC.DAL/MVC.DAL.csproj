@@ -54,6 +54,7 @@
     <Compile Include="Factory\LocalBurger.cs" />
     <Compile Include="Factory\Ham.cs" />
     <Compile Include="Factory\IProduct.cs" />
+    <Compile Include="Factory\ProductClass.cs" />
     <Compile Include="Factory\Prototype\CheeseSlice.cs" />
     <Compile Include="Factory\Prototype\Clonable.cs" />
     <Compile Include="Factory\Sausage.cs" />

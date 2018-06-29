@@ -73,8 +73,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Controllers\BuildBurgerController.cs" />
+    <Compile Include="Controllers\BurgerComponentsController.cs" />
     <Compile Include="Controllers\BurgerMenuController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\UserOrdersController.cs" />
+    <Compile Include="Views\BurgerInfoPage.xaml.cs">
+      <DependentUpon>BurgerInfoPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\BurgerMenuPage.xaml.cs">
       <DependentUpon>BurgerMenuPage.xaml</DependentUpon>
     </Compile>
@@ -86,6 +91,9 @@
     </Compile>
     <Compile Include="Views\OrderPage.xaml.cs">
       <DependentUpon>OrderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowUserOrders.xaml.cs">
+      <DependentUpon>ShowUserOrders.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -99,6 +107,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\BurgerInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\BurgerMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -112,6 +124,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\OrderPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShowUserOrders.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

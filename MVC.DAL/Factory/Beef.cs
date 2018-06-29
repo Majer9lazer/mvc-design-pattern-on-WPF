@@ -2,7 +2,7 @@
 
 namespace MVC.DAL.Factory
 {
-    public class Beef:IProduct
+    public class Beef : ProductClass
     {
         public Beef(double weight, double priceForHundredGrams, string name)
         {
@@ -10,8 +10,6 @@ namespace MVC.DAL.Factory
             PriceForHundredGrams = priceForHundredGrams;
             Name = name;
         }
-        public double Weight { get; set; }
-        public double PriceForHundredGrams { get; set; }
-        public string Name { get; set; }
+       
     }
 }

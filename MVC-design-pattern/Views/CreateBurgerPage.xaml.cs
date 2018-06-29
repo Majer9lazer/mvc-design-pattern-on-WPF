@@ -60,7 +60,7 @@ namespace MVC_design_pattern.Views
             {
                 CountOfCheeseSlicesLabel.Content =
                     $"Кусочков сыра : " +
-                    $"{_buildBurgerController.AddCheeseSlice(new CheeseSlice(weight: _rnd.NextDouble() * 5, priceForHundredGrams: _rnd.Next(7, 10), name: "Кусок сыра"))}";
+                    $"{_buildBurgerController.AddCheeseSlice()}";
             });
         }
 
@@ -72,10 +72,11 @@ namespace MVC_design_pattern.Views
                 //content = content.Substring(content.IndexOf(":", StringComparison.Ordinal) + 1);
                 //MessageBox.Show(content);
                 string message = _buildBurgerController.BuiltBurger(BurgerNameTextBox.Text, $"Order_{BurgerNameTextBox.Text}",
-                        LoginController.GetCurrentUser());
-                if (message == "0") { 
+                        LogInPage._loginController.GetCurrentUser());
+                if (message == "0")
+                {
                     MessageBox.Show("Ура ваш бургер был собран!");
-                    MainWindow.MainFrameStatic.Source= new Uri("Views/OrderPage.xaml", UriKind.RelativeOrAbsolute);
+                    MainWindow.MainFrameStatic.Source = new Uri("Views/OrderPage.xaml", UriKind.RelativeOrAbsolute);
                     CountOfSausagesLabel.Content = "Количество сосисек : 0";
                     CountOfHamsLabel.Content = "Количество ветчины : 0";
                     CountOfBeefsLabel.Content = "Количество говядины : 0";
@@ -88,6 +89,11 @@ namespace MVC_design_pattern.Views
             {
                 MessageBox.Show("Вы не заполнили поле с названием бургера");
             }
+        }
+
+        private void ExitToMainMenu_MenuItemClcik(object sender, RoutedEventArgs e)
+        {
+            MainWindow.MainFrameStatic.Source = new Uri("Views/OrderPage.xaml", UriKind.RelativeOrAbsolute);
         }
     }
 }

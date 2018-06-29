@@ -10,16 +10,21 @@
 
     <Grid Background="White">
         <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-
-        <Border Grid.Row="0" Background="DodgerBlue" BorderBrush="CornflowerBlue" BorderThickness="2" CornerRadius="7">
+        <Menu Grid.Row="0">
+            <MenuItem Header="Меню">
+                <MenuItem Header="Выйти в главное меню" Click="ExitToMainMenu_MenuItemClcik"> </MenuItem>
+            </MenuItem>
+        </Menu>
+        <Border Grid.Row="1" Background="DodgerBlue" BorderBrush="CornflowerBlue" BorderThickness="2" CornerRadius="7">
             <Label  Content="Название вашего бургера" Foreground="White" FontSize="16" Margin="1"></Label>
         </Border>
-        <TextBox Grid.Row="1" Margin="0 1" x:Name="BurgerNameTextBox" Text="Usual Burger"></TextBox>
-        <StackPanel Grid.Row="2">
+        <TextBox Grid.Row="2" Margin="0 1" x:Name="BurgerNameTextBox" Text="Usual Burger"></TextBox>
+        <StackPanel Grid.Row="3">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>

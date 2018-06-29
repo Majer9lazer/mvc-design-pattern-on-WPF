@@ -8,7 +8,7 @@
         xmlns:controls="clr-namespace:WPF.Bootstrap.Controls;assembly=WPF.Bootstrap"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="850">
+        Title="MainWindow" Height="600" Width="850">
 
     <controls:BootstrapPanel  Type="Primary" Header="Лучшие бургеры от Егора" Margin="5">
         <Frame  x:Name="MainFrame" NavigationUIVisibility="Hidden">

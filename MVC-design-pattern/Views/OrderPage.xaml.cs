@@ -34,7 +34,8 @@ namespace MVC_design_pattern.Views
 
         private void GotFocusMainMenu(object sender, RoutedEventArgs e)
         {
-            OrderBurgerBackgroundImage.Opacity = 0.5;
+            OrderBurgerBackgroundImage.Opacity = 0.3;
+            OrderMainMenu.Opacity = 1;
         }
 
         private void CreateBurgerMenuItemClick(object sender, RoutedEventArgs e)
@@ -50,8 +51,17 @@ namespace MVC_design_pattern.Views
         private void ApllicationExit_MenuItemClick(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("До скорых встреч!");
-            Thread.Sleep(1000);
             Application.Current.Shutdown();
+        }
+
+        private void LostFocus_MainMenu(object sender, RoutedEventArgs e)
+        {
+            OrderBurgerBackgroundImage.Opacity = 0.7;
+        }
+
+        private void ShowOrders_MenuItemClick(object sender, RoutedEventArgs e)
+        {
+            MainWindow.MainFrameStatic.Source = new Uri("Views/ShowUserOrders.xaml", UriKind.RelativeOrAbsolute);
         }
     }
 }

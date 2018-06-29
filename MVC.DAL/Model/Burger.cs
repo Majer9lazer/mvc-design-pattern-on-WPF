@@ -16,7 +16,7 @@ namespace MVC.DAL.Model
 
         public int BurgerId { get; set; }
 
-        [StringLength(50)]
+        [StringLength(250)]
         public string BurgerName { get; set; }
 
         public DateTime? BurgerBuildDate { get; set; }

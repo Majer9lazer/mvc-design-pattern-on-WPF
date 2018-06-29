@@ -8,11 +8,11 @@ using MVC.DAL.Model;
 
 namespace MVC_design_pattern.Controllers
 {
-    class LoginController
+    public class LoginController
     {
         private static readonly BurgerCafeDb Db = new BurgerCafeDb();
         private static List<User> _users = Db.Users.ToList();
-        private static User _user= new User();
+        private static User _user = new User();
 
         public LoginController()
         {
@@ -27,7 +27,7 @@ namespace MVC_design_pattern.Controllers
                     _user = _users.FirstOrDefault(f => f.UserName == userName);
                     if (_user == null)
                     {
-                        _user= new User
+                        _user = new User
                         {
                             UserName = userName,
                             UserDateSignIn = DateTime.Now,
@@ -35,6 +35,7 @@ namespace MVC_design_pattern.Controllers
                         };
                         Db.Users.Add(_user);
                         Db.SaveChanges();
+                        _user = Db.Users.FirstOrDefault(f => f.UserName == userName);
                         return 0.ToString();
                     }
                     _user.UserDateSignIn = DateTime.Now;
@@ -51,6 +52,6 @@ namespace MVC_design_pattern.Controllers
             return "Вы не заполнили поле.";
         }
 
-        public static User GetCurrentUser() => _user;
+        public User GetCurrentUser() => _user;
     }
 }

@@ -22,7 +22,7 @@ namespace MVC_design_pattern.Views
     /// </summary>
     public partial class LogInPage : Page
     {
-        private readonly LoginController _loginController = new LoginController();
+        public static LoginController _loginController = new LoginController();
         public LogInPage()
         {
             InitializeComponent();

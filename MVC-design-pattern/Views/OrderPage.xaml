@@ -11,23 +11,23 @@
     <Border  Background="Black" BorderBrush="Gray" BorderThickness="2" CornerRadius="7">
         <StackPanel>
             <StackPanel.Background>
-                <ImageBrush ImageSource="../Images/Big-Juicy-Burgers.jpg" Stretch="UniformToFill" x:Name="OrderBurgerBackgroundImage" Opacity="0.3" ></ImageBrush>
+                <ImageBrush ImageSource="../Images/Big-Juicy-Burgers.jpg" Stretch="UniformToFill" x:Name="OrderBurgerBackgroundImage" Opacity="0.7" ></ImageBrush>
             </StackPanel.Background>
-            <Menu HorizontalAlignment="Left">
-                <MenuItem Header="Меню" Foreground="Black" FontSize="19" GotFocus="GotFocusMainMenu">
+            <Menu HorizontalAlignment="Left" Opacity="0.4" x:Name="OrderMainMenu">
+                <MenuItem Header="Меню" Foreground="Black" FontSize="19" GotFocus="GotFocusMainMenu" LostFocus="LostFocus_MainMenu">
                     <MenuItem Foreground="Black" Header="Показать меню" Click="ShowMenuClick"></MenuItem>
+                    <MenuItem Foreground="Black" Header="Показать мои заказы" Click="ShowOrders_MenuItemClick"></MenuItem>
                     <MenuItem Foreground="Black" Header="Заказать бургер" Click="CreateBurgerMenuItemClick"></MenuItem>
                     <MenuItem Foreground="Black" Header="Выход в главное меню" Click="ExitToMainPage_MenuItemClick"></MenuItem>
                     <MenuItem Foreground="Black" Header="Выход из приложения" Click="ApllicationExit_MenuItemClick"></MenuItem>
                 </MenuItem>
             </Menu>
-           <Grid Margin="0 10">
-               <Grid.RowDefinitions>
-                   <RowDefinition></RowDefinition>
-                   <RowDefinition></RowDefinition>
-                  </Grid.RowDefinitions>
-               <TextBlock Grid.Row="0" Background="White"  Text="Список доступных бургеров :"></TextBlock>
-           </Grid>
+            <Grid Margin="0 10">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+            </Grid>
         </StackPanel>
     </Border>
 </Page>
