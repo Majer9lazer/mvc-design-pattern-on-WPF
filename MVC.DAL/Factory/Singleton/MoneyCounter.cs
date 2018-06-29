@@ -4,7 +4,7 @@ namespace MVC.DAL.Factory.Singleton
 {
     public class MoneyCounter
     {
-        private static readonly List<IProduct> _products = new List<IProduct>();
+        private static readonly List<ProductClass> Products = new List<ProductClass>();
         private static MoneyCounter _counter;
         private MoneyCounter() { }
 
@@ -17,12 +17,12 @@ namespace MVC.DAL.Factory.Singleton
                 return _counter;
         }
         
-        public static void LogBuyes(IProduct product) => _products.Add(product);
+        public static void LogBuyes(ProductClass product) => Products.Add(product);
 
         public string ShowLoggedData()
         {
             string str = "Купили : \n";
-            foreach (IProduct product in _products)
+            foreach (ProductClass product in Products)
             {
                 str += $"{product.Name} , цена за 100 грам = {product.PriceForHundredGrams} , вес = {product.Weight}\n";
             }
