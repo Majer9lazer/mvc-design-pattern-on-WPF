@@ -56,11 +56,11 @@ namespace MVC_design_pattern.Views
             try
             {
                 string message = _burgerController.BuiltBurger(burger, $"Order_{burger.BurgerName}",
-                          LogInPage._loginController.GetCurrentUser());
+                    LogInPage._loginController.GetCurrentUser());
                 if (message == "0")
                 {
                     MessageBox.Show("Ваш бургер был заказан");
-                    MainWindow.MainFrameStatic.Source=new Uri("Views/OrderPage.xaml", UriKind.RelativeOrAbsolute);
+                    MainWindow.MainFrameStatic.Source = new Uri("Views/OrderPage.xaml", UriKind.RelativeOrAbsolute);
                 }
                 else
                 {
@@ -71,10 +71,7 @@ namespace MVC_design_pattern.Views
             {
                 MessageBox.Show(exception.ToString());
             }
-
-
         }
-
         private void ExitToOrderPage(object sender, RoutedEventArgs e)
         {
             MainWindow.MainFrameStatic.Source = new Uri("Views/OrderPage.xaml", UriKind.RelativeOrAbsolute);

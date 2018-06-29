@@ -37,7 +37,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <StackPanel Grid.Row="4" Margin="5 0">
+        <StackPanel Grid.Row="4" Margin="5 0" HorizontalAlignment="Left">
             <Border Background="#FDFD9B" BorderBrush="#E4E42B" BorderThickness="2" CornerRadius="7" Margin="1 1">
                 <Label Content="Итоговая цена : 0" x:Name="TotalPriceLabel"></Label>
             </Border>
